@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://YOUR-DOMAIN.example/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/ar/</loc><xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN.example/ar/"/><xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN.example/en/"/></url>
+  <url><loc>https://YOUR-DOMAIN.example/en/</loc><xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN.example/ar/"/><xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN.example/en/"/></url>
+  <url><loc>https://YOUR-DOMAIN.example/ar/cv/</loc><xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN.example/ar/cv/"/><xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN.example/en/cv/"/></url>
+  <url><loc>https://YOUR-DOMAIN.example/en/cv/</loc><xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN.example/ar/cv/"/><xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN.example/en/cv/"/></url>
+</urlset>
