@@ -121,6 +121,8 @@
     }
   };
   const ghIcon = () => { const t = document.createElement('template'); t.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>'; return t.content.firstChild; };
+  const policyIcon = () => { const t = document.createElement('template'); t.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 19 6v5c0 4.5-2.9 8-7 10-4.1-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>'; return t.content.firstChild; };
+  const policyLabel = document.dir === 'rtl' ? 'سياسة الخصوصية' : 'Privacy Policy';
   const open = (id, from) => {
     cur = byId[id]; gi = 0; opener = from;
     const gal = el('div', { class: 'gal' });
@@ -133,7 +135,8 @@
       cur.features.length ? [el('h4', { text: UI.features }), el('ul', { class: 'flist' }, cur.features.map(f => el('li', { text: f })))] : null,
       cur.tech.length ? [el('h4', { text: UI.tech }), el('ul', { class: 'chips latin' }, cur.tech.map(t => el('li', { class: 'latin', text: t })))] : null,
       [cur.store ? el('a', { class: 'btn primary sm', href: cur.store, target: '_blank', rel: 'noopener', style: 'align-self:flex-start;margin-top:6px', text: UI.visit }) : null,
-      cur.repo ? el('a', { class: 'btn primary sm gh', href: cur.repo, target: '_blank', rel: 'noopener noreferrer', style: 'align-self:flex-start;margin-top:6px' }, ghIcon(), UI.download) : null]);
+      cur.repo ? el('a', { class: 'btn primary sm gh', href: cur.repo, target: '_blank', rel: 'noopener noreferrer', style: 'align-self:flex-start;margin-top:6px' }, ghIcon(), UI.download) : null,
+      cur.id === 'innerfire' ? el('a', { class: 'btn ghost sm privacy-link', href: '../privacy_policy.html', target: '_blank', rel: 'noopener noreferrer', style: 'align-self:flex-start;margin-top:6px', 'aria-label': policyLabel }, policyIcon(), policyLabel) : null]);
     const close = el('button', { class: 'mclose', type: 'button', 'aria-label': UI.close, text: '×' });
     close.addEventListener('click', () => dlg.close());
     dlg.replaceChildren(el('div', { class: 'mwrap' }, el('div', { class: 'mbox', role: 'document' }, close, gal, info)));
